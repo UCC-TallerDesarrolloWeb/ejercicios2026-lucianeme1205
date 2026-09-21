@@ -8,6 +8,8 @@
  */
 convertirUnidades = (id, Valor) => {
     let metros, pulgadas, pie, yardas;
+
+    Valor = Valor.repleace(",","." );
     if(isNaN(Valor)){
 
         alert("Se ingreso un valor incorrecto:" +id)
@@ -37,10 +39,10 @@ convertirUnidades = (id, Valor) => {
     pulgadas = Valor * 36;
     pie = Valor * 3;
 }
-    document.getElementById("metro").value = metros;
-    document.getElementById("pulgada").value = pulgadas;
-    document.getElementById("pie").value = pie;
-    document.getElementById("yarda").value = yardas;
+    document.getElementById("metro").value = Math.round(metros*100)/100;
+    document.getElementById("pulgada").value = Math.round(pulgadas*100)/100;
+    document.getElementById("pie").value = Math.round(pie*100)/100;
+    document.getElementById("yarda").value = yardas.toFixed(2);
     
 
 
@@ -76,4 +78,11 @@ function convertirGR(id){
 mostrarOcultar = (valor) => {
     const displayDiv = valor=="val_mostrar" ? 'block' : 'none';
     document.getElementById("unDiv").style.display = displayDiv;
+}
+
+function calcularSuma(){
+    let sum1, sum2;
+    sum1 = document.getElementById("nums1").value;
+    sum2 = document.getElementById("nums2").value;
+    document.getElementById("totalS").value = Number(sum1) + Number(sum2);
 }
