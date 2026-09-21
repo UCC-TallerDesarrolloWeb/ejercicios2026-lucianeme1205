@@ -5,3 +5,31 @@
  * @param Parámetro B
  * @return Valor que retorna
  */
+function convertirUnidades(id, Valor){
+    if(isNaN(Valor)){
+
+        alert("Se ingreso un valor incorrecto:" +id)
+        document.getElementById("metro").value = "";
+        document.getElementById("pie").value = "";
+        document.getElementById("pulgada").value = "";
+    }else if(id == "metro"){
+        document.getElementById("pulgada").value = Valor * 39.09361;
+        document.getElementById("pie").value = Valor * 3.28084;
+        document.getElementById("yarda").value = Valor * 1.09361;
+    }else if (id === "pulgada") {
+        document.getElementById("metro").value = (num / 39.3701).toFixed(4);
+        document.getElementById("pie").value = (num / 12).toFixed(4);
+        document.getElementById("yarda").value = (num / 36).toFixed(4);
+
+    } else if (id === "pie") {
+        document.getElementById("metro").value = (num / 3.28084).toFixed(4);
+        document.getElementById("pulgada").value = (num * 12).toFixed(4);
+        document.getElementById("yarda").value = (num / 3).toFixed(4);
+
+    } else if (id === "yarda") {
+        document.getElementById("metro").value = (num / 1.09361).toFixed(4);
+        document.getElementById("pulgada").value = (num * 36).toFixed(4);
+        document.getElementById("pie").value = (num * 3).toFixed(4);
+    }
+
+}
