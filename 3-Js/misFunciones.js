@@ -80,9 +80,58 @@ mostrarOcultar = (valor) => {
     document.getElementById("unDiv").style.display = displayDiv;
 }
 
+/**
+ * Realiza la suma de dos números ingresados en el HTML y muestra el resultado.
+ * 
+ * @method calcularSuma
+ */
 function calcularSuma(){
     let sum1, sum2;
     sum1 = document.getElementById("nums1").value;
     sum2 = document.getElementById("nums2").value;
-    document.getElementById("totalS").value = Number(sum1) + Number(sum2);
+    document.getElementById("totalS").innerText= Number(sum1) + Number(sum2);
+}
+
+/**
+ * Realiza la resta de dos números ingresados en el HTML y muestra el resultado.
+ * 
+ * @method calcularResta
+ */
+function calcularResta(){
+    let rest1, rest2;
+    rest1 = document.getElementById("numr1").value;
+    rest2 = document.getElementById("numr2").value;
+    document.getElementById("totalR").innerText= Number(rest1) - Number(rest2);
+
+}
+
+/**
+ * Realiza la multiplicación de dos números ingresados en el HTML y muestra el resultado.
+ * 
+ * @method calcularMultiplicacion
+ */
+function calcularMultiplicacion(){
+    let mult1, mult2;
+    mult1 = document.getElementById("numm1").value;
+    mult2 = document.getElementById("numm2").value;
+    document.getElementById("totalM").innerText= Number(mult1) *  Number(mult2);
+
+}
+
+/**
+ * Realiza la división de dos números ingresados en el HTML y muestra el resultado.
+ * Valida que el divisor no sea igual a cero para evitar resultados infinitos.
+ * 
+ * @method calcularDivision
+ */
+function calcularDivision() {
+    let div1, div2;
+    div1 = document.getElementById("numd1").value;
+    div2 = document.getElementById("numd2").value;
+
+    if (Number(div2) === 0) {
+        document.getElementById("totalD").innerText = "No se puede dividir por 0";
+    } else {
+        document.getElementById("totalD").innerText = Number(div1) / Number(div2);
+    }
 }
