@@ -61,3 +61,17 @@ const productos = [
     imagen: "protectores-manos.webp",
   },
 ];
+
+cerrarNodal = () => {
+  document.getElementById("nodal").style.display = 'none';
+}
+
+mostrarCatalogo = () =>{
+  let contenido = "";
+
+ producto.forEach(producto) 
+  contenido += <div></div>
+ }
+ <button type="button" onclick ="agregarAlCarrito($(id))">Agregar al carrito</button>
+
+}
